@@ -92,7 +92,7 @@ class _HomeViewState extends State<HomeView> {
             ],
           ),
         ),
-      ):ArticlesListView(),
+      ):ArticlesListView(selectedCategory: selectedCategory!,),
     );
   }
   void onSelectCategory(CategoryData categoryData){
