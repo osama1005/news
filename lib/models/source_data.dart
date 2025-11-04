@@ -1,3 +1,5 @@
+import 'package:flutter/foundation.dart';
+
 class SourceData{
   final String sourceId ;
   final String sourceName ;
@@ -6,6 +8,8 @@ class SourceData{
     required this.sourceId,
     required this.sourceName,
   });
-
+   factory SourceData.fromJson(Map<String , dynamic> jason){
+    return SourceData(sourceId: jason["id"], sourceName: jason["name"]);
+  }
 
 }
