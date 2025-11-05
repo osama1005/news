@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:news/gen/assets.gen.dart';
 import 'package:news/main.dart';
 import 'package:news/models/category_data.dart';
-import 'package:news/modules/home/pages/articles_list_view.dart';
-import 'package:news/modules/home/pages/custom_drawer_view.dart';
+import 'package:news/modules/home/View/articles_list_view.dart';
+import 'package:news/modules/home/View/custom_drawer_view.dart';
 import 'package:news/modules/home/widgets/CategoryItem.dart';
+
+
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
 

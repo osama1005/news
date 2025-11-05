@@ -33,7 +33,7 @@ abstract class ApiServices{
        return sourceList;
 
      } catch (error) {
-       throw Exception();
+       throw Exception("No Response");
      }
    }
    static Future <List<ArticleData>> gatAllArticle(String sourceId)async {

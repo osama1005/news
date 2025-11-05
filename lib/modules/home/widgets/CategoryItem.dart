@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:news/gen/assets.gen.dart';
 import 'package:news/models/category_data.dart';
 class Categoryitem extends StatelessWidget {
   final CategoryData categoryData;
