@@ -1,4 +1,3 @@
-import 'package:news/models/source_data.dart';
 
 abstract class EndPoint{
 
