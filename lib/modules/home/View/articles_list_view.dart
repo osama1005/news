@@ -5,6 +5,7 @@ import 'package:news/models/category_data.dart';
 import 'package:news/models/source_data.dart';
 import 'package:news/modules/home/Cubit/Articles_cubit.dart';
 import 'package:news/modules/home/Cubit/Articles_ststes.dart';
+import 'package:news/modules/home/widgets/NewsCard.dart';
 import 'package:provider/provider.dart';
 import 'package:shimmer_animation/shimmer_animation.dart';
 
@@ -101,86 +102,7 @@ class _ArticlesListViewState extends State<ArticlesListView> {
                      ),
                    ),
                  )
-                     : Container(
-                   decoration: BoxDecoration(
-                     color: Colors.white,
-                     border: Border.all(color: Colors.black),
-                     borderRadius: BorderRadius.circular(16),
-                   ),
-                   margin: EdgeInsets.symmetric(
-                     horizontal: 20,
-                     vertical: 16,
-                   ),
-                   padding: EdgeInsets.all(8),
-                   child: Column(
-                     spacing: 10,
-                     children: [
-                       CachedNetworkImage(
-                         imageUrl:
-                         viewModel.articleList[index].urlToImage,
-                         imageBuilder: (context, imageProvider) =>
-                             Container(
-                               height: 220,
-                               decoration: BoxDecoration(
-                                 borderRadius: BorderRadius.circular(
-                                   16,
-                                 ),
-                                 image: DecorationImage(
-                                   image: imageProvider,
-                                   fit: BoxFit.cover,
-                                 ),
-                               ),
-                             ),
-                         placeholder: (context, url) => Container(
-                           height: 220,
-                           child: Center(
-                             child: CircularProgressIndicator(),
-                           ),
-                         ),
-                         errorWidget: (context, url, error) =>
-                             Container(
-                               height: 220,
-                               child: Icon(Icons.error),
-                             ),
-                       ),
-
-                       Text(
-                         viewModel.articleList[index].title,
-                         style: TextStyle(
-                           fontSize: 16,
-                           fontWeight: FontWeight.w700,
-                           color: Colors.black,
-                           height: 1.1,
-                         ),
-                       ),
-                       Row(
-                         mainAxisAlignment:
-                         MainAxisAlignment.spaceBetween,
-                         crossAxisAlignment: CrossAxisAlignment.start,
-                         children: [
-                           Expanded(
-                             child: Text(
-                               " By : ${viewModel.articleList[index].source.sourceName}",
-                               style: TextStyle(
-                                 fontSize: 12,
-                                 fontWeight: FontWeight.w500,
-                                 color: Colors.black,
-                               ),
-                             ),
-                           ),
-                           Text(
-                             viewModel.articleList[index].publishedAt,
-                             style: TextStyle(
-                               fontSize: 12,
-                               fontWeight: FontWeight.w500,
-                               color: Colors.black,
-                             ),
-                           ),
-                         ],
-                       ),
-                     ],
-                   ),
-                 );
+                     : NewsCard(articleData: viewModel.articleList[index]);
                },
                itemCount: viewModel.isLoadingArticles
                    ? 5
