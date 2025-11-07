@@ -2,6 +2,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:news/models/article_data.dart';
 import 'package:news/models/source_data.dart';
 import 'package:news/modules/home/Cubit/Articles_ststes.dart';
+import 'package:news/modules/search/data/model/article_rsponce_model.dart';
 import 'package:news/network/Api_services.dart';
 
 class ArticlesCubit extends Cubit<ArticlesState>{
@@ -13,13 +14,13 @@ class ArticlesCubit extends Cubit<ArticlesState>{
   int _selectedIndex = 0;
 
   List <SourceData> _sourceList = [];
-  List <ArticleData> _articleList = [];
+  List <Articles> _articleList = [];
 
   bool get isLoadingSources => _isLoadingSources;
   bool get isLoadingArticles => _isLoadingArticles;
   int get selectedIndex => _selectedIndex;
   List <SourceData> get sourceList => _sourceList;
-  List <ArticleData> get articleList => _articleList;
+  List <Articles> get articleList => _articleList;
 
 
 

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:news/core/routes/page_route_name.dart';
 import 'package:news/gen/assets.gen.dart';
 import 'package:news/main.dart';
 import 'package:news/models/category_data.dart';
@@ -59,7 +60,12 @@ class _HomeViewState extends State<HomeView> {
         actions: [
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20.0),
-            child: Assets.icons.search.image(),
+            child: InkWell(
+                onTap: (){
+                  Navigator.pushNamed(context,PageRouteName.search);
+
+                },
+                child: Assets.icons.search.image()),
           )
         ],
       ),
